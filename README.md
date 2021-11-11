@@ -1,4 +1,4 @@
-# Terms for &lt;your scope&gt;
+# Terms for GSWG
 
 This is where to collaborate on terminology that &lt;your scope&gt; wants to formalize -- to build, version, and release glossaries, to reference from whitepapers, and so forth.
 
