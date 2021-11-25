@@ -20,15 +20,20 @@ header {
     background-image: url(https://raw.githubusercontent.com/trustoverip/ctwg/main/logo.png);
     background-repeat: no-repeat;
 }
-
 main {
-    padding: 16px;
+    padding: 16px 24px;
     color: #444;
+}
+
+@media screen and (min-width: 640px) {
+  main {
+      padding: 24px 64px;
+  }
 }
 
 dt {
     margin-top: 1.4em;
-    color: #3061a8;
+    color: #02005f;
     font-size: 125%;
     font-family: Verdana, sans-serif;
 }
@@ -41,6 +46,7 @@ dt.letter {
     margin-left: 25%;
     margin-right: 25%;
     margin-top: 2.2em;
+    color: #666;
 }
 
 nav {
@@ -74,10 +80,6 @@ a {
     text-decoration: none;
 }
 
-dt > a {
-    color: #02005f;
-}
-
 a:hover {
     border-bottom: solid 1px #3061a8;
 }
@@ -101,133 +103,193 @@ p.meta {
     margin-top: -0.9em;
 }
 
+._slf {
+    float: left;
+    padding-right: 4px;
+    padding-top: 4px;
+    margin-left: -20px;
+    cursor: pointer;
+    width:16px;
+    height:16px;
+    display: none;
+}
+
+dt:not(.letter):hover > ._slf {
+    display: inline;
+}
+
+._xl {
+    padding-right: 4px;
+    display: none;
+    cursor: pointer;
+    width:16px;
+    height:16px;
+}
+
+dt:not(.letter):hover > ._xl {
+  display: inline;
+}
   </style>
+  <script>
+var getAbsoluteUrl = (function() {
+  var a;
+  return function(url) {
+      if (!a)
+        a = document.createElement('a');
+      a.href = url;
+      return a.href;
+  };
+})();
+
+function copyUrl(url) {
+  x = getAbsoluteUrl(url);
+  navigator.clipboard.writeText(x);
+}
+
+function goto(url) {
+  window.location = url;
+}
+  </script>
 </head>
 <body>
+
+<svg style="display:none">
+  <symbol id="_slf" viewBox="0 0 16 16">
+    <path style="fill:#aaa" fill-rule="evenodd"
+          d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"/>
+  </symbol>
+  <symbol id="_xl" viewBox="0 -256 1850 1850">
+    <g transform="matrix(1,0,0,-1,30.372881,1426.9492)">
+      <path style="fill:#aaa"
+            d="M 1408,608 V 288 Q 1408,169 1323.5,84.5 1239,0 1120,0 H 288 Q 169,0 84.5,84.5 0,169 0,288 v 832 Q 0,1239 84.5,1323.5 169,1408 288,1408 h 704 q 14,0 23,-9 9,-9 9,-23 v -64 q 0,-14 -9,-23 -9,-9 -23,-9 H 288 q -66,0 -113,-47 -47,-47 -47,-113 V 288 q 0,-66 47,-113 47,-47 113,-47 h 832 q 66,0 113,47 47,47 47,113 v 320 q 0,14 9,23 9,9 23,9 h 64 q 14,0 23,-9 9,-9 9,-23 z m 384,864 V 960 q 0,-26 -19,-45 -19,-19 -45,-19 -26,0 -45,19 L 1507,1091 855,439 q -10,-10 -23,-10 -13,0 -23,10 L 695,553 q -10,10 -10,23 0,13 10,23 l 652,652 -176,176 q -19,19 -19,45 0,26 19,45 19,19 45,19 h 512 q 26,0 45,-19 19,-19 19,-45 z" />
+    </g>
+  </symbol>
+</svg>
+
 <header>GSWG Glossary</header>
 <nav>[ <a href="#A">A</a> B <a href="#C">C</a> <a href="#D">D</a> E F G <a href="#H">H</a> <a href="#I">I</a> J <a href="#K">K</a> L <a href="#M">M</a> <a href="#N">N</a> <a href="#O">O</a> <a href="#P">P</a> Q <a href="#R">R</a> <a href="#S">S</a> <a href="#T">T</a> U V W X Y Z ]</nav>
 
 <main>
-<dl>
+<dl id="glossary_content">
 <dt id="A" class="letter">A</td>
-<dt id="acquired-trust"><a href="#acquired-trust">acquired trust</a> <span class="tag">#assurance</span><span class="tag">#gswg</span></dt>
+<dt id="acquired-trust"><svg class="_slf" onclick="copyUrl('#acquired-trust')"><use href="#_slf"/></svg>acquired trust <svg class="_xl" onclick="goto('https://github.com/trustoverip/gswg/wiki//acquired-trust')"><use href="#_xl"/></svg><span class="tag">#assurance</span><span class="tag">#gswg</span></dt>
 <dd><p>Trust gained through direct experience.</p>
 <p class="meta">version 4, commit a8d8630, created 2021-11-15, last modified 2021-11-20, contributors ScottPerryCPA - Drummond Reed</p>
 </dd>
 
 <dt id="C" class="letter">C</td>
-<dt id="controlled-document"><a href="#controlled-document">controlled document</a> <span class="tag">#gswg</span></dt>
+<dt id="controlled-document"><svg class="_slf" onclick="copyUrl('#controlled-document')"><use href="#_slf"/></svg>controlled document <svg class="_xl" onclick="goto('https://github.com/trustoverip/gswg/wiki//controlled-document')"><use href="#_xl"/></svg><span class="tag">#gswg</span></dt>
 <dd><p>A component document of a <a href="https://github.com/trustoverip/toip/wiki/governance-framework">governance framework</a> that follows the modular architecture of the <a href="#toip-governance-metamodel">ToIP governance metamodel</a>. All controlled documents must be listed in the <a href="#primary-document" title="The starting point document (&quot;home page&quot;) of a governance framework that follows the modular architecture of the ToIP governance metamodel.">primary document</a>.</p>
 <p class="meta">version 1, commit 05f7784, created 2021-11-16, contributors Drummond Reed</p>
 </dd>
 
-<dt id="cryptographic-trust"><a href="#cryptographic-trust">cryptographic trust</a> <span class="tag">#assurance</span><span class="tag">#gswg</span></dt>
+<dt id="cryptographic-trust"><svg class="_slf" onclick="copyUrl('#cryptographic-trust')"><use href="#_slf"/></svg>cryptographic trust <svg class="_xl" onclick="goto('https://github.com/trustoverip/gswg/wiki//cryptographic-trust')"><use href="#_xl"/></svg><span class="tag">#assurance</span><span class="tag">#gswg</span></dt>
 <dd><p>Trust based on reliance on <a href="https://en.wikipedia.org/wiki/Cryptography">cryptography</a> for assurance about the relationship between public and private keys in a <a href="https://en.wikipedia.org/wiki/Public_key_infrastructure">public key infrastructure</a> (PKI). </p>
 <p class="meta">version 4, commit d686412, created 2021-11-16, last modified 2021-11-21, contributors Drummond Reed - ScottPerryCPA</p>
 </dd>
 
 <dt id="D" class="letter">D</td>
-<dt id="direct-trust"><a href="#direct-trust">direct trust</a> <span class="tag">#assurance</span><span class="tag">#gswg</span></dt>
+<dt id="direct-trust"><svg class="_slf" onclick="copyUrl('#direct-trust')"><use href="#_slf"/></svg>direct trust <svg class="_xl" onclick="goto('https://github.com/trustoverip/gswg/wiki//direct-trust')"><use href="#_xl"/></svg><span class="tag">#assurance</span><span class="tag">#gswg</span></dt>
 <dd><p>In a [trust relationship] between a subject and an object, direct trust derives from the subject’s direct experience with the object and not through any other [party].</p>
 <p class="meta">version 2, commit 93cd757, created 2021-11-21, last modified 2021-11-21, contributors Drummond Reed</p>
 </dd>
 
 <dt id="H" class="letter">H</td>
-<dt id="human-auditable-requirement"><a href="#human-auditable-requirement">human auditable requirement</a> <span class="tag">#gswg</span><span class="tag">#reqs</span></dt>
+<dt id="human-auditable-requirement"><svg class="_slf" onclick="copyUrl('#human-auditable-requirement')"><use href="#_slf"/></svg>human auditable requirement <svg class="_xl" onclick="goto('https://github.com/trustoverip/gswg/wiki//human-auditable-requirement')"><use href="#_xl"/></svg><span class="tag">#gswg</span><span class="tag">#reqs</span></dt>
 <dd><p>A <a href="#requirement" title="In the context of a governance framework (GF), a requirement states a condition that an actor (human or machine) must meet in order to be in conformance.">requirement</a> expressed in a human language that can only be fulfilled by a human <a href="#actor">actor</a> performing a set of <a href="#process" title="A specified set of actions that an actor must take in order to be in conformance with a policy.">processes</a> and <a href="#practice" title="A specified activity that an actor must perform as part of a process.">practices</a> against which conformance can only be tested by an <a href="#auditor">auditor</a> of some kind. In a ToIP-compliant <a href="#governance-framework">governance framework</a>, human-auditable requirements are expressed as <a href="#policy" title="A human-auditable requirement that specifies some set of processes and practices that an actor must follow in order to be in conformance with the requirement.">policies</a>.</p>
 <p class="meta">version 2, commit ae68cd5, created 2021-11-20, last modified 2021-11-21, contributors Drummond Reed</p>
 </dd>
 
 <dt id="I" class="letter">I</td>
-<dt id="inherent-trust"><a href="#inherent-trust">inherent trust</a> <span class="tag">#assurance</span><span class="tag">#gswg</span></dt>
+<dt id="inherent-trust"><svg class="_slf" onclick="copyUrl('#inherent-trust')"><use href="#_slf"/></svg>inherent trust <svg class="_xl" onclick="goto('https://github.com/trustoverip/gswg/wiki//inherent-trust')"><use href="#_xl"/></svg><span class="tag">#assurance</span><span class="tag">#gswg</span></dt>
 <dd><p>Trust that stems from our acceptance of the innate laws of nature and established social norms. Inherent trust is not controllable from a risk mitigation standpoint; it just exists.</p>
 <p class="meta">version 2, commit 5358dbd, created 2021-11-15, last modified 2021-11-20, contributors ScottPerryCPA - Drummond Reed</p>
 </dd>
 
 <dt id="K" class="letter">K</td>
-<dt id="keyword"><a href="#keyword">keyword</a> <span class="tag">#gswg</span><span class="tag">#reqs</span></dt>
+<dt id="keyword"><svg class="_slf" onclick="copyUrl('#keyword')"><use href="#_slf"/></svg>keyword <svg class="_xl" onclick="goto('https://github.com/trustoverip/gswg/wiki//keyword')"><use href="#_xl"/></svg><span class="tag">#gswg</span><span class="tag">#reqs</span></dt>
 <dd><p>A specified word used to define normative <a href="#requirement" title="In the context of a governance framework (GF), a requirement states a condition that an actor (human or machine) must meet in order to be in conformance.">requirements</a>. The <a href="https://wiki.trustoverip.org/display/HOME/ToIP+Governance+Metamodel+Specification">ToIP Governance Metamodel Specification</a> specifies that all <a href="#requirement" title="In the context of a governance framework (GF), a requirement states a condition that an actor (human or machine) must meet in order to be in conformance.">requirements</a> MUST be expressed using <a href="https://datatracker.ietf.org/doc/html/rfc2119">RFC 2119</a> keywords spelled in ALL CAPITALS.</p>
 <p class="meta">version 1, commit d8449ef, created 2021-11-21, contributors Drummond Reed</p>
 </dd>
 
 <dt id="M" class="letter">M</td>
-<dt id="machine-testable-requirement"><a href="#machine-testable-requirement">machine testable requirement</a> <span class="tag">#gswg</span><span class="tag">#reqs</span></dt>
+<dt id="machine-testable-requirement"><svg class="_slf" onclick="copyUrl('#machine-testable-requirement')"><use href="#_slf"/></svg>machine testable requirement <svg class="_xl" onclick="goto('https://github.com/trustoverip/gswg/wiki//machine-testable-requirement')"><use href="#_xl"/></svg><span class="tag">#gswg</span><span class="tag">#reqs</span></dt>
 <dd><p>A <a href="#requirement" title="In the context of a governance framework (GF), a requirement states a condition that an actor (human or machine) must meet in order to be in conformance.">requirement</a> written in a <a href="https://en.wikipedia.org/wiki/Machine-readability">machine-readable</a> format such that conformance of a software <a href="#actor">actor</a> implementing the requirement can be tested by an automated <a href="https://en.wikipedia.org/wiki/Test_suite">test suite</a> or <a href="#rules-engine">rules engine</a>. In a ToIP-compliant <a href="#governance-framework">governance framework</a>, machine-readable requirements are expressed as <a href="#rule" title="A machine-testable requirement written in a machine-readable language that can be processed by a rules engine.">rules</a> in a <a href="https://en.wikipedia.org/wiki/List_of_programming_languages_by_type#Rule-based_languages">rules-based language</a>.</p>
 <p class="meta">version 3, commit 991de00, created 2021-11-20, last modified 2021-11-21, contributors Drummond Reed</p>
 </dd>
 
-<dt id="mandatory"><a href="#mandatory">mandatory</a> <span class="tag">#gswg</span><span class="tag">#reqs</span></dt>
+<dt id="mandatory"><svg class="_slf" onclick="copyUrl('#mandatory')"><use href="#_slf"/></svg>mandatory <svg class="_xl" onclick="goto('https://github.com/trustoverip/gswg/wiki//mandatory')"><use href="#_xl"/></svg><span class="tag">#gswg</span><span class="tag">#reqs</span></dt>
 <dd><p>A <a href="#requirement" title="In the context of a governance framework (GF), a requirement states a condition that an actor (human or machine) must meet in order to be in conformance.">requirement</a> expressed using one of the following <a href="https://datatracker.ietf.org/doc/html/rfc2119">RFC 2119</a> <a href="#keyword" title="A specified word used to define normative requirements.">keywords</a>: &quot;MUST&quot;, &quot;MUST NOT&quot;, &quot;REQUIRED&quot;, &quot;SHALL&quot;, &quot;SHALL NOT&quot;.</p>
 <p class="meta">version 1, commit b5f2b5a, created 2021-11-20, contributors Drummond Reed</p>
 </dd>
 
 <dt id="N" class="letter">N</td>
-<dt id="non-transitive-trust"><a href="#non-transitive-trust">non transitive trust</a> <span class="tag">#assurance</span><span class="tag">#gswg</span></dt>
+<dt id="non-transitive-trust"><svg class="_slf" onclick="copyUrl('#non-transitive-trust')"><use href="#_slf"/></svg>non transitive trust <svg class="_xl" onclick="goto('https://github.com/trustoverip/gswg/wiki//non-transitive-trust')"><use href="#_xl"/></svg><span class="tag">#assurance</span><span class="tag">#gswg</span></dt>
 <dd><p>The trust conveyed within the boundaries of an ecosystem. </p>
 <p class="meta">version 5, commit 413de7c, created 2021-11-20, last modified 2021-11-21, contributors Drummond Reed - ScottPerryCPA</p>
 </dd>
 
 <dt id="O" class="letter">O</td>
-<dt id="option"><a href="#option">option</a> <span class="tag">#gswg</span><span class="tag">#reqs</span></dt>
+<dt id="option"><svg class="_slf" onclick="copyUrl('#option')"><use href="#_slf"/></svg>option <svg class="_xl" onclick="goto('https://github.com/trustoverip/gswg/wiki//option')"><use href="#_xl"/></svg><span class="tag">#gswg</span><span class="tag">#reqs</span></dt>
 <dd><p>A <a href="#requirement" title="In the context of a governance framework (GF), a requirement states a condition that an actor (human or machine) must meet in order to be in conformance.">requirement</a> expressed using one of the following <a href="https://datatracker.ietf.org/doc/html/rfc2119">RFC 2119</a> <a href="#keyword" title="A specified word used to define normative requirements.">keywords</a>: &quot;MAY&quot;, &quot;OPTIONAL&quot;.</p>
 <p class="meta">version 1, commit 0eab121, created 2021-11-20, contributors Drummond Reed</p>
 </dd>
 
 <dt id="P" class="letter">P</td>
-<dt id="policy"><a href="#policy">policy</a> <span class="tag">#gswg</span><span class="tag">#reqs</span></dt>
+<dt id="policy"><svg class="_slf" onclick="copyUrl('#policy')"><use href="#_slf"/></svg>policy <svg class="_xl" onclick="goto('https://github.com/trustoverip/gswg/wiki//policy')"><use href="#_xl"/></svg><span class="tag">#gswg</span><span class="tag">#reqs</span></dt>
 <dd><p>A <a href="#human-auditable-requirement" title="A requirement expressed in a human language that can only be fulfilled by a human actor performing a set of processes and practices against which conformance can only be tested by an auditor of some kind.">human-auditable requirement</a> that specifies some set of <a href="#process" title="A specified set of actions that an actor must take in order to be in conformance with a policy.">processes</a> and <a href="#practice" title="A specified activity that an actor must perform as part of a process.">practices</a> that an <a href="#actor">actor</a> must follow in order to be in conformance with the <a href="#requirement" title="In the context of a governance framework (GF), a requirement states a condition that an actor (human or machine) must meet in order to be in conformance.">requirement</a>.</p>
 <p class="meta">version 2, commit 2c76a2e, created 2021-11-20, last modified 2021-11-20, contributors Drummond Reed</p>
 </dd>
 
-<dt id="practice"><a href="#practice">practice</a> <span class="tag">#gswg</span><span class="tag">#reqs</span></dt>
+<dt id="practice"><svg class="_slf" onclick="copyUrl('#practice')"><use href="#_slf"/></svg>practice <svg class="_xl" onclick="goto('https://github.com/trustoverip/gswg/wiki//practice')"><use href="#_xl"/></svg><span class="tag">#gswg</span><span class="tag">#reqs</span></dt>
 <dd><p>A specified activity that an <a href="#actor">actor</a> must perform as part of a <a href="#process" title="A specified set of actions that an actor must take in order to be in conformance with a policy.">process</a>.</p>
 <p class="meta">version 3, commit 1225e95, created 2021-11-20, last modified 2021-11-20, contributors ScottPerryCPA - Drummond Reed</p>
 </dd>
 
-<dt id="primary-document"><a href="#primary-document">primary document</a> <span class="tag">#gswg</span></dt>
+<dt id="primary-document"><svg class="_slf" onclick="copyUrl('#primary-document')"><use href="#_slf"/></svg>primary document <svg class="_xl" onclick="goto('https://github.com/trustoverip/gswg/wiki//primary-document')"><use href="#_xl"/></svg><span class="tag">#gswg</span></dt>
 <dd><p>The starting point document (&quot;home page&quot;) of a <a href="https://github.com/trustoverip/toip/wiki/governance-framework">governance framework</a> that follows the modular architecture of the <a href="#toip-governance-metamodel">ToIP governance metamodel</a>. In this metamodel, the primary document is required to include a list of all other <a href="#controlled-document" title="A component document of a governance framework that follows the modular architecture of the ToIP governance metamodel.">controlled documents</a>.</p>
 <p class="meta">version 2, commit 6991377, created 2021-11-16, last modified 2021-11-20, contributors Drummond Reed</p>
 </dd>
 
-<dt id="process"><a href="#process">process</a> <span class="tag">#gswg</span><span class="tag">#reqs</span></dt>
+<dt id="process"><svg class="_slf" onclick="copyUrl('#process')"><use href="#_slf"/></svg>process <svg class="_xl" onclick="goto('https://github.com/trustoverip/gswg/wiki//process')"><use href="#_xl"/></svg><span class="tag">#gswg</span><span class="tag">#reqs</span></dt>
 <dd><p>A specified set of <a href="#action">actions</a> that an <a href="#actor">actor</a> must take in order to be in conformance with a <a href="#policy" title="A human-auditable requirement that specifies some set of processes and practices that an actor must follow in order to be in conformance with the requirement.">policy</a>. A process may consist of a set of <a href="#practice" title="A specified activity that an actor must perform as part of a process.">practices</a>.</p>
 <p class="meta">version 4, commit a543e56, created 2021-11-20, last modified 2021-11-20, contributors ScottPerryCPA - Drummond Reed</p>
 </dd>
 
 <dt id="R" class="letter">R</td>
-<dt id="recommendation"><a href="#recommendation">recommendation</a> <span class="tag">#gswg</span><span class="tag">#reqs</span></dt>
+<dt id="recommendation"><svg class="_slf" onclick="copyUrl('#recommendation')"><use href="#_slf"/></svg>recommendation <svg class="_xl" onclick="goto('https://github.com/trustoverip/gswg/wiki//recommendation')"><use href="#_xl"/></svg><span class="tag">#gswg</span><span class="tag">#reqs</span></dt>
 <dd><p>A <a href="#requirement" title="In the context of a governance framework (GF), a requirement states a condition that an actor (human or machine) must meet in order to be in conformance.">requirement</a> expressed using one of the following <a href="https://datatracker.ietf.org/doc/html/rfc2119">RFC 2119</a> <a href="#keyword" title="A specified word used to define normative requirements.">keywords</a>: &quot;SHOULD&quot;, &quot;SHOULD NOT&quot;, &quot;RECOMMENDED&quot;.</p>
 <p class="meta">version 2, commit 9e6c28e, created 2021-11-20, last modified 2021-11-20, contributors ScottPerryCPA - Drummond Reed</p>
 </dd>
 
-<dt id="referential-trust"><a href="#referential-trust">referential trust</a> <span class="tag">#assurance</span><span class="tag">#gswg</span></dt>
+<dt id="referential-trust"><svg class="_slf" onclick="copyUrl('#referential-trust')"><use href="#_slf"/></svg>referential trust <svg class="_xl" onclick="goto('https://github.com/trustoverip/gswg/wiki//referential-trust')"><use href="#_xl"/></svg><span class="tag">#assurance</span><span class="tag">#gswg</span></dt>
 <dd><p>Trust established through a trustworthy intermediary transferring trust upon a third party.</p>
 <p class="meta">version 3, commit 59b8520, created 2021-11-16, last modified 2021-11-20, contributors ScottPerryCPA</p>
 </dd>
 
-<dt id="requirement"><a href="#requirement">requirement</a> <span class="tag">#gswg</span><span class="tag">#reqs</span></dt>
+<dt id="requirement"><svg class="_slf" onclick="copyUrl('#requirement')"><use href="#_slf"/></svg>requirement <svg class="_xl" onclick="goto('https://github.com/trustoverip/gswg/wiki//requirement')"><use href="#_xl"/></svg><span class="tag">#gswg</span><span class="tag">#reqs</span></dt>
 <dd><p>In the context of a <a href="https://github.com/trustoverip/toip/wiki/governance-framework">governance framework</a> (GF), a requirement states a condition that an <a href="https://github.com/trustoverip/toip/wiki/actor">actor</a> (human or machine) must meet in order to be in conformance. This condition may be stated as either a <a href="#policy" title="A human-auditable requirement that specifies some set of processes and practices that an actor must follow in order to be in conformance with the requirement.">policy</a> (a <a href="#human-auditable-requirement" title="A requirement expressed in a human language that can only be fulfilled by a human actor performing a set of processes and practices against which conformance can only be tested by an auditor of some kind.">human-auditable requirement</a>) or a <a href="#rule" title="A machine-testable requirement written in a machine-readable language that can be processed by a rules engine.">rule</a> (a <a href="#machine-testable-requirement" title="A requirement written in a machine-readable format such that conformance of a software actor implementing the requirement can be tested by an automated test suite or rules engine.">machine-testable requirement</a>). A requirement may be either a <a href="#mandatory" title="A requirement expressed using one of the following RFC 2119 keywords: &quot;MUST&quot;, &quot;MUST NOT&quot;, &quot;REQUIRED&quot;, &quot;SHALL&quot;, &quot;SHALL NOT&quot;.">mandatory</a>, a <a href="#recommendation" title="A requirement expressed using one of the following RFC 2119 keywords: &quot;SHOULD&quot;, &quot;SHOULD NOT&quot;, &quot;RECOMMENDED&quot;.">recommendation</a>, or an <a href="#option" title="A requirement expressed using one of the following RFC 2119 keywords: &quot;MAY&quot;, &quot;OPTIONAL&quot;.">option</a>.</p>
 <p class="meta">version 5, commit 0b03576, created 2021-11-20, last modified 2021-11-20, contributors Drummond Reed</p>
 </dd>
 
-<dt id="rule"><a href="#rule">rule</a> <span class="tag">#gswg</span><span class="tag">#reqs</span></dt>
+<dt id="rule"><svg class="_slf" onclick="copyUrl('#rule')"><use href="#_slf"/></svg>rule <svg class="_xl" onclick="goto('https://github.com/trustoverip/gswg/wiki//rule')"><use href="#_xl"/></svg><span class="tag">#gswg</span><span class="tag">#reqs</span></dt>
 <dd><p>A <a href="#machine-testable-requirement" title="A requirement written in a machine-readable format such that conformance of a software actor implementing the requirement can be tested by an automated test suite or rules engine.">machine-testable requirement</a> written in a <a href="#machine-readable">machine-readable</a> language that can be processed by a <a href="#rules-engine">rules engine</a>. </p>
 <p class="meta">version 2, commit 85d091a, created 2021-11-20, last modified 2021-11-20, contributors Drummond Reed</p>
 </dd>
 
 <dt id="S" class="letter">S</td>
-<dt id="specification"><a href="#specification">specification</a> <span class="tag">#gswg</span><span class="tag">#reqs</span></dt>
+<dt id="specification"><svg class="_slf" onclick="copyUrl('#specification')"><use href="#_slf"/></svg>specification <svg class="_xl" onclick="goto('https://github.com/trustoverip/gswg/wiki//specification')"><use href="#_xl"/></svg><span class="tag">#gswg</span><span class="tag">#reqs</span></dt>
 <dd><p>A document or set of documents containing any combination of <a href="#human-auditable-requirement" title="A requirement expressed in a human language that can only be fulfilled by a human actor performing a set of processes and practices against which conformance can only be tested by an auditor of some kind.">human-auditable requirements</a> and <a href="#machine-testable-requirement" title="A requirement written in a machine-readable format such that conformance of a software actor implementing the requirement can be tested by an automated test suite or rules engine.">machine-testable requirements</a> needed to produce interoperability amongst implementations of the specification. A specification may be included directly in a <a href="#governance-framework">governance framework</a> as a <a href="#controlled-document" title="A component document of a governance framework that follows the modular architecture of the ToIP governance metamodel.">controlled document</a> or it may be referenced via a <a href="https://en.wikipedia.org/wiki/Permalink">permalink</a>.</p>
 <p class="meta">version 2, commit fbc02fd, created 2021-11-21, last modified 2021-11-22, contributors Drummond Reed</p>
 </dd>
 
-<dt id="specification-profile"><a href="#specification-profile">specification profile</a> <span class="tag">#gswg</span><span class="tag">#reqs</span></dt>
+<dt id="specification-profile"><svg class="_slf" onclick="copyUrl('#specification-profile')"><use href="#_slf"/></svg>specification profile <svg class="_xl" onclick="goto('https://github.com/trustoverip/gswg/wiki//specification-profile')"><use href="#_xl"/></svg><span class="tag">#gswg</span><span class="tag">#reqs</span></dt>
 <dd><p>A particular type of <a href="#specification" title="A document or set of documents containing any combination of human-auditable requirements and machine-testable requirements needed to produce interoperability amongst implementations of the specification.">specification</a> that defines <a href="#requirement" title="In the context of a governance framework (GF), a requirement states a condition that an actor (human or machine) must meet in order to be in conformance.">requirements</a> for using another <a href="#specification" title="A document or set of documents containing any combination of human-auditable requirements and machine-testable requirements needed to produce interoperability amongst implementations of the specification.">specification</a>. </p>
 <p class="meta">version 1, commit 0b9fae8, created 2021-11-22, contributors Drummond Reed</p>
 </dd>
 
 <dt id="T" class="letter">T</td>
-<dt id="transitive-trust"><a href="#transitive-trust">transitive trust</a> <span class="tag">#assurance</span><span class="tag">#gswg</span></dt>
+<dt id="transitive-trust"><svg class="_slf" onclick="copyUrl('#transitive-trust')"><use href="#_slf"/></svg>transitive trust <svg class="_xl" onclick="goto('https://github.com/trustoverip/gswg/wiki//transitive-trust')"><use href="#_xl"/></svg><span class="tag">#assurance</span><span class="tag">#gswg</span></dt>
 <dd><p>In a [trust relationship] between a subject and an object, transitive trust does not derive from the subject’s direct experience with the object, but from the subject’s experience with another party that has direct experience with the object.</p>
 <p class="meta">version 1, commit b51775d, created 2021-11-21, contributors Drummond Reed</p>
 </dd>
